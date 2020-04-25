@@ -6,6 +6,7 @@ import java.util.Deque;
 /*
  * https://leetcode.com/problems/valid-parentheses/
  * https://leetcode.com/articles/valid-parentheses/
+ * https://leetcode.com/problems/valid-parentheses/discuss/9178/Short-java-solution
 */
 public class ValidParentheses {
 	public boolean isValid(String s) {

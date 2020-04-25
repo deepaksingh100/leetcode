@@ -37,16 +37,19 @@ public class ValidSudoku {
 			}
 		}
 
-		// check each 3x3 block
-		for (int block = 0; block < 9; block++) {
-			boolean[] exist = new boolean[9];
-			for (int i = block / 3 * 3; i < block / 3 * 3 + 3; i++) {
-				for (int j = block % 3 * 3; j < block % 3 * 3 + 3; j++) {
-					if (board[i][j] != '.') {
-						if (exist[board[i][j] - '1']) {
-							return false;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				boolean[] exist = new boolean[9];
+				for (int k = 0; k < 3; k++) {
+					for (int l = 0; l < 3; l++) {
+						int x = i * 3 + k;
+						int y = j * 3 + l;
+						if (board[x][y] != '.') {
+							if (exist[board[x][y] - '1']) {
+								return false;
+							}
+							exist[board[x][y] - '1'] = true;
 						}
-						exist[board[i][j] - '1'] = true;
 					}
 				}
 			}

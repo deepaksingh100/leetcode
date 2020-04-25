@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /*
  * https://leetcode.com/problems/longest-increasing-subsequence/
+ * https://www.youtube.com/watch?v=fV-TF4OvZpk
 */
 public class LongestIncreasingSubsequence {
 

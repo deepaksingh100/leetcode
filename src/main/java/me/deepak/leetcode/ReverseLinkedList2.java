@@ -4,6 +4,7 @@ import me.deepak.leetcode.beans.ListNode;
 
 /*
  * https://leetcode.com/problems/reverse-linked-list-ii/
+ * https://leetcode.com/articles/reverse-linked-list-ii/
 */
 public class ReverseLinkedList2 {
 

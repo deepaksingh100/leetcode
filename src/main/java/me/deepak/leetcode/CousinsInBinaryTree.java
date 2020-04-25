@@ -31,16 +31,12 @@ public class CousinsInBinaryTree {
 				root = queue.remove();
 				if (root.val == a) {
 					aExists = true;
-				}
-				if (root.val == b) {
+				} else if (root.val == b) {
 					bExists = true;
 				}
 
 				if (root.left != null && root.right != null) {
-					if (root.left.val == a && root.right.val == b) {
-						return false;
-					}
-					if (root.left.val == b && root.right.val == a) {
+					if ((root.left.val == a && root.right.val == b) || (root.left.val == b && root.right.val == a)) {
 						return false;
 					}
 				}

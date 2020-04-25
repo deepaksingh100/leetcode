@@ -4,6 +4,7 @@ import me.deepak.leetcode.beans.TreeNode;
 
 /*
  * https://leetcode.com/problems/invert-binary-tree/
+ * https://leetcode.com/articles/invert-binary-tree/
 */
 public class InvertBinaryTree {
 

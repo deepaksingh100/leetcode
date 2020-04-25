@@ -3,6 +3,7 @@ package me.deepak.leetcode;
 /*
  * https://leetcode.com/problems/unique-paths/
  * https://leetcode.com/problems/unique-paths/discuss/22953/Java-DP-solution-with-complexity-O(n*m)
+ * https://leetcode.com/problems/unique-paths/discuss/22981/My-AC-solution-using-formula
 */
 public class UniquePaths {
 

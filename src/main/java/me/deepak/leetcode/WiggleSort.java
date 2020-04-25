@@ -12,7 +12,7 @@ public class WiggleSort {
 
 		int n = a.length;
 
-		// traverse all odd elements
+		// traverse all odd index elements
 		for (int i = 1; i < n; i += 2) {
 
 			// if current odd element is smaller than previous
@@ -20,7 +20,7 @@ public class WiggleSort {
 				swap(a, i, i - 1);
 			}
 
-			// if current odd element is smaller than next
+			// if current odd index element is smaller than next
 			if (i < n - 1 && a[i] < a[i + 1]) {
 				swap(a, i, i + 1);
 			}

@@ -8,7 +8,7 @@ import java.util.Queue;
 */
 public class ImplementStackUsingQueues {
 
-	Queue<Integer> queue;
+	private final Queue<Integer> queue;
 
 	/** Initialize your data structure here. */
 	public ImplementStackUsingQueues() {

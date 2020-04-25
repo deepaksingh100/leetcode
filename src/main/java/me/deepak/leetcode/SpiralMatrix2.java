@@ -2,10 +2,11 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/spiral-matrix-ii/
+ * https://www.youtube.com/watch?v=siKFOI8PNKM
 */
 public class SpiralMatrix2 {
 
-	enum Direction {
+	private enum Direction {
 		LEFT, RIGHT, UP, DOWN
 	}
 

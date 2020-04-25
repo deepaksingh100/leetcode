@@ -10,27 +10,29 @@ import me.deepak.leetcode.beans.TreeNode;
 */
 public class BinaryTreePaths {
 
+	private static final String ARROW = "->";
+	
 	public List<String> binaryTreePaths(TreeNode root) {
 		List<String> paths = new ArrayList<>();
-		binaryTreePaths(root, "", paths);
+		binaryTreePaths(root, new StringBuilder(), paths);
 		return paths;
 	}
 
-	public void binaryTreePaths(TreeNode root, String path, List<String> paths) {
+	public void binaryTreePaths(TreeNode root, StringBuilder path, List<String> paths) {
 
 		if (root == null) {
 			return;
 		}
 
-		path += root.val;
+		path.append(root.val);
 
 		if (root.left == null && root.right == null) {
-			paths.add(path);
+			paths.add(path.toString());
 			return;
 		}
 
-		binaryTreePaths(root.left, path + "->", paths);
-		binaryTreePaths(root.right, path + "->", paths);
+		binaryTreePaths(root.left, new StringBuilder(path).append(ARROW), paths);
+		binaryTreePaths(root.right, new StringBuilder(path).append(ARROW), paths);
 
 	}
 

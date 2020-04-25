@@ -2,6 +2,7 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/max-area-of-island/
+ * https://leetcode.com/articles/max-area-of-island/
 */
 public class MaxAreaOfIsland {
 

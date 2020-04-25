@@ -4,32 +4,26 @@ import me.deepak.leetcode.beans.ListNode;
 
 /*
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+ * https://leetcode.com/problems/remove-nth-node-from-end-of-list/discuss/8804/Simple-Java-solution-in-one-pass
 */
 public class RemoveNthNodeFromEndOfList {
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
-		if (n == 0 || head == null) {
-			return head;
-		}
-		ListNode main = head;
-		ListNode ref = head;
-		for (int i = 0; i < n; i++) {
-			ref = ref.next;
-		}
-
-		while (ref != null && ref.next != null) {
-			main = main.next;
-			ref = ref.next;
+		ListNode dummy = new ListNode(0);
+		dummy.next = head;
+		ListNode slow = dummy;
+		ListNode fast = dummy;
+		for (int i = 1; i <= n + 1; i++) {
+			fast = fast.next;
 		}
 
-		// ref == null means we reached at end in first iteration, so we need to remove
-		// head
-		if (ref == null) {
-			head = head.next;
-		} else {
-			main.next = main.next.next;
+		while (fast != null) {
+			slow = slow.next;
+			fast = fast.next;
 		}
-		return head;
+
+		slow.next = slow.next.next;
+		return dummy.next;
 	}
 
 }

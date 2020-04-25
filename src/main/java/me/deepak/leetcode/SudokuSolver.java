@@ -2,15 +2,16 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/sudoku-solver/
+ * https://youtu.be/G_UYXzGuqvM
  * https://leetcode.com/problems/sudoku-solver/discuss/15752/Straight-Forward-Java-Solution-Using-Backtracking
 */
 public class SudokuSolver {
 
 	public void solveSudoku(char[][] board) {
-		helper(board);
+		solve(board);
 	}
 
-	private boolean helper(char[][] board) {
+	private boolean solve(char[][] board) {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				if (board[i][j] == '.') {
@@ -21,7 +22,7 @@ public class SudokuSolver {
 
 							// Put c for this cell
 							board[i][j] = c;
-							if (helper(board)) {
+							if (solve(board)) {
 
 								// If it's the solution return true
 								return true;
@@ -54,7 +55,7 @@ public class SudokuSolver {
 			}
 
 			// check in 3x3 block
-			if (board[row / 3 * 3 + i / 3][col / 3 * 3 + i % 3] == c) {
+			if (board[3 * row / 3 + i / 3][3 * col / 3 + i % 3] == c) {
 				return false;
 			}
 		}

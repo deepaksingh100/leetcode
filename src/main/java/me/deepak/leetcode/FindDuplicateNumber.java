@@ -2,6 +2,7 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/find-the-duplicate-number/
+ * https://leetcode.com/articles/find-the-duplicate-number/
 */
 public class FindDuplicateNumber {
 

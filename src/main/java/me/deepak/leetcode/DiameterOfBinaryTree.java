@@ -7,7 +7,7 @@ import me.deepak.leetcode.beans.TreeNode;
 */
 public class DiameterOfBinaryTree {
 
-	class Height {
+	private static class Height {
 		int h = 0;
 	}
 

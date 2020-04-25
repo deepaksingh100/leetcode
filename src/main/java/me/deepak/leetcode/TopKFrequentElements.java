@@ -26,17 +26,16 @@ public class TopKFrequentElements {
 			map.put(i, map.getOrDefault(i, 0) + 1);
 		}
 
-		PriorityQueue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<>(k + 1,
-				(entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()));
+		PriorityQueue<Integer> minHeap = new PriorityQueue<>(k + 1);
 		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-			minHeap.add(entry);
+			minHeap.add(entry.getValue());
 			if (minHeap.size() > k) {
 				minHeap.remove();
 			}
 		}
 
 		while (!minHeap.isEmpty()) {
-			result.add(minHeap.remove().getKey());
+			result.add(minHeap.remove());
 		}
 
 		return result;

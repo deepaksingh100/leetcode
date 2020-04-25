@@ -2,6 +2,7 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/toeplitz-matrix/
+ * https://leetcode.com/articles/toeplitz-matrix/
 */
 public class ToeplitzMatrix {
 

@@ -19,16 +19,16 @@ public class RangeSumBST {
 
 		if (root != null) {
 
+			if (l <= root.val && r >= root.val) {
+				sum += root.val;
+			}
+			
 			if (l < root.val) {
 				dfs(root.left, l, r);
 			}
 
 			if (r > root.val) {
 				dfs(root.right, l, r);
-			}
-
-			if (l <= root.val && r >= root.val) {
-				sum += root.val;
 			}
 
 		}

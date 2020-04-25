@@ -4,6 +4,7 @@ import me.deepak.leetcode.beans.TreeNode;
 
 /*
  * https://leetcode.com/problems/validate-binary-search-tree/
+ * https://leetcode.com/articles/validate-binary-search-tree/
 */
 public class ValidateBinarySearchTree {
 

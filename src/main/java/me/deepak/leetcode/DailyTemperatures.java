@@ -6,6 +6,7 @@ import java.util.Deque;
 
 /*
  * https://leetcode.com/problems/daily-temperatures/
+ * https://leetcode.com/articles/daily-temperatures/
 */
 public class DailyTemperatures {
 

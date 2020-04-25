@@ -2,6 +2,8 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/longest-palindromic-subsequence/
+ * https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/
+ * https://www.geeksforgeeks.org/print-longest-palindromic-subsequence/
 */
 public class LongestPalindromicSubsequence {
 

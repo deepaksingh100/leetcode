@@ -19,7 +19,7 @@ public class LRUCache {
 
 	public LRUCache(int capacity) {
 		this.capacity = capacity;
-		cache = new HashMap<>();
+		cache = new HashMap<>(capacity);
 	}
 
 	public int get(int key) {

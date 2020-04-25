@@ -22,35 +22,32 @@ public class TwoSum4 {
 
 		while (!inOrderStack.isEmpty() || !reverseInOrderStack.isEmpty() || inOrderCurr != null
 				|| reverseInOrderCurr != null) {
-			if (inOrderCurr != null || reverseInOrderCurr != null) {
-				if (inOrderCurr != null) {
-					inOrderStack.push(inOrderCurr);
-					inOrderCurr = inOrderCurr.left;
-				}
+			while (inOrderCurr != null) {
+				inOrderStack.push(inOrderCurr);
+				inOrderCurr = inOrderCurr.left;
+			}
 
-				if (reverseInOrderCurr != null) {
-					reverseInOrderStack.push(reverseInOrderCurr);
-					reverseInOrderCurr = reverseInOrderCurr.right;
-				}
+			while (reverseInOrderCurr != null) {
+				reverseInOrderStack.push(reverseInOrderCurr);
+				reverseInOrderCurr = reverseInOrderCurr.right;
+			}
+			TreeNode inOrderNode = inOrderStack.peek();
+			TreeNode reverseInOrderNode = reverseInOrderStack.peek();
+
+			if (inOrderNode == reverseInOrderNode) {
+				return false;
+			}
+
+			int sum = inOrderNode.val + reverseInOrderNode.val;
+
+			if (sum < target) {
+				inOrderCurr = inOrderStack.pop();
+				inOrderCurr = inOrderCurr.right;
+			} else if (sum > target) {
+				reverseInOrderCurr = reverseInOrderStack.pop();
+				reverseInOrderCurr = reverseInOrderCurr.left;
 			} else {
-				TreeNode inOrderNode = inOrderStack.peek();
-				TreeNode reverseInOrderNode = reverseInOrderStack.peek();
-
-				if (inOrderNode == reverseInOrderNode) {
-					return false;
-				}
-
-				int sum = inOrderNode.val + reverseInOrderNode.val;
-
-				if (sum < target) {
-					inOrderCurr = inOrderStack.pop();
-					inOrderCurr = inOrderCurr.right;
-				} else if (sum > target) {
-					reverseInOrderCurr = reverseInOrderStack.pop();
-					reverseInOrderCurr = reverseInOrderCurr.left;
-				} else {
-					return true;
-				}
+				return true;
 			}
 		}
 

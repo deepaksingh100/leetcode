@@ -2,6 +2,8 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/house-robber-ii/
+ * https://www.youtube.com/watch?v=WbbxQ7nmpiU
+ * https://leetcode.com/problems/house-robber-ii/discuss/59934/Simple-AC-solution-in-Java-in-O(n)-with-explanation
  * https://www.geeksforgeeks.org/maximum-sum-in-circular-array-such-that-no-two-elements-are-adjacent/
 */
 public class HouseRobber2 {

@@ -4,6 +4,7 @@ import me.deepak.leetcode.beans.ListNode;
 
 /*
  * https://leetcode.com/problems/linked-list-cycle/
+ * https://leetcode.com/articles/linked-list-cycle/
 */
 public class LinkedListCycle {
 

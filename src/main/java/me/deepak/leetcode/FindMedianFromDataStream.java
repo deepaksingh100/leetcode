@@ -6,30 +6,31 @@ import java.util.PriorityQueue;
 /*
  * https://leetcode.com/problems/find-median-from-data-stream/
  * https://leetcode.com/articles/find-median-from-data-stream/
+ * https://youtu.be/VmogG01IjYc
 */
 public class FindMedianFromDataStream {
 
-	PriorityQueue<Integer> minHeap = null;
-	PriorityQueue<Integer> maxHeap = null;
+	PriorityQueue<Integer> upperHalf = null;
+	PriorityQueue<Integer> lowerHalf = null;
 
 	public FindMedianFromDataStream() {
-		minHeap = new PriorityQueue<>();
-		maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+		upperHalf = new PriorityQueue<>(); // Min Heap
+		lowerHalf = new PriorityQueue<>(Comparator.reverseOrder()); // Max Heap
 	}
 
 	public void addNum(int num) {
-		minHeap.add(num);
-		maxHeap.add(minHeap.remove());
-		if (minHeap.size() < maxHeap.size()) {
-			minHeap.add(maxHeap.remove());
+		upperHalf.add(num);
+		lowerHalf.add(upperHalf.remove());
+		if (upperHalf.size() < lowerHalf.size()) {
+			upperHalf.add(lowerHalf.remove());
 		}
 	}
 
 	public double findMedian() {
-		if (minHeap.size() > maxHeap.size()) {
-			return minHeap.peek();
+		if (upperHalf.size() > lowerHalf.size()) {
+			return upperHalf.peek();
 		}
-		return (minHeap.peek() + maxHeap.peek()) / 2.0;
+		return (upperHalf.peek() + lowerHalf.peek()) / 2.0;
 	}
 
 }

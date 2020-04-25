@@ -2,6 +2,7 @@ package me.deepak.leetcode;
 
 /*
  * https://leetcode.com/problems/maximum-length-of-repeated-subarray/
+ * https://leetcode.com/articles/maximum-length-of-repeated-subarray/
 */
 public class MaximumLengthOfRepeatedSubarray {
 
