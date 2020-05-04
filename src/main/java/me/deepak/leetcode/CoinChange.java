@@ -33,10 +33,13 @@ public class CoinChange {
 				// If it is less than or equal to the sub problem amount
 				if (coins[j] <= i) {
 
-					// Either we include current coin OR not.
-					minChangeCoins[i] = Math.min(minChangeCoins[i] // does not include current coin
-							, minChangeCoins[i - coins[j]] + 1) // include current coin
-					;
+					int subResult = minChangeCoins[i - coins[j]];
+					if (subResult != Integer.MAX_VALUE) {
+						// Either we include current coin OR not.
+						minChangeCoins[i] = Math.min(minChangeCoins[i] // does not include current coin
+								, subResult + 1) // include current coin
+						;
+					}
 				}
 			}
 		}
